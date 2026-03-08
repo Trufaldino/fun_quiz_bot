@@ -1,0 +1,15 @@
+[Unit]
+Description=Quiplash Telegram Bot (AI Верстак)
+After=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/root/dev/fun_quiz_bot
+EnvironmentFile=/root/dev/fun_quiz_bot/.env
+ExecStart=/root/dev/fun_quiz_bot/venv/bin/python bot.py
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
